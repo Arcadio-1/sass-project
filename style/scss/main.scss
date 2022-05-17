@@ -1,0 +1,110 @@
+@import "footer";
+$color-primery: royalblue;
+$color-secondary: violet;
+$color-tertiary: navy;
+$color-light: snow;
+$color-darck: dimgray;
+$color-danger: red;
+$color-warning: orange;
+@mixin ul-style($fontSize, $fontColor) {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    text-decoration: none;
+    color: $fontColor;
+    font-size: $fontSize;
+    font-weight: 600;
+    &:hover {
+      color: $color-primery;
+    }
+  }
+}
+@mixin transition($prameters...) {
+  transition: $prameters;
+}
+@function dobler($fontSizeIn: 1rem) {
+  @return $fontSizeIn * 2;
+}
+.d-flex-colum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.btn {
+  border: 2px solid $color-secondary;
+  border-radius: 5px;
+  background-color: transparent;
+}
+body {
+  background-color: $color-light;
+  max-width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+nav {
+  color: $color-tertiary;
+  background-color: $color-light;
+  ul {
+    @include ul-style(1.5rem, $color-warning);
+  }
+}
+section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: 1fr;
+
+  h1 {
+    font-size: 3rem;
+    color: $color-tertiary;
+    @include transition(background-color 0.3s ease-in-out, color 1s ease-in);
+    &:hover {
+      background-color: blueviolet;
+      color: $color-light;
+    }
+  }
+  article {
+    border: 2px solid gray;
+    border-radius: 5px;
+    @extend .d-flex-colum;
+    max-width: 220px;
+    width: 100%;
+    .header-art {
+      font-size: 1rem;
+      color: $color-primery;
+    }
+    img {
+      width: 100%;
+    }
+    .desc {
+      font-size: dobler(0.6rem);
+    }
+    .footer-art {
+      width: 100%;
+      @extend .d-flex-row;
+      p {
+        color: $color-danger;
+        font-weight: 600;
+      }
+      button {
+        @extend .btn;
+      }
+    }
+  }
+}
+footer {
+  background-color: $color-darck;
+  ul {
+    @include ul-style(1.5rem, $color-warning);
+  }
+}

@@ -1,0 +1,89 @@
+footer h1 {
+  color: snow;
+  text-align: center;
+  border: 2px solid red; }
+
+.d-flex-colum, section article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+
+.d-flex-row, section article .footer-art {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly; }
+
+.btn, section article .footer-art button {
+  border: 2px solid violet;
+  border-radius: 5px;
+  background-color: transparent; }
+
+body {
+  background-color: snow;
+  max-width: 85vw;
+  margin-left: auto;
+  margin-right: auto; }
+
+nav {
+  color: navy;
+  background-color: snow; }
+  nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around; }
+    nav ul a {
+      text-decoration: none;
+      color: orange;
+      font-size: 1.5rem;
+      font-weight: 600; }
+      nav ul a:hover {
+        color: royalblue; }
+
+section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: 1fr; }
+  section h1 {
+    font-size: 3rem;
+    color: navy;
+    transition: background-color 0.3s ease-in-out, color 1s ease-in; }
+    section h1:hover {
+      background-color: blueviolet;
+      color: snow; }
+  section article {
+    border: 2px solid gray;
+    border-radius: 5px;
+    max-width: 220px;
+    width: 100%; }
+    section article .header-art {
+      font-size: 1rem;
+      color: royalblue; }
+    section article img {
+      width: 100%; }
+    section article .desc {
+      font-size: 1.2rem; }
+    section article .footer-art {
+      width: 100%; }
+      section article .footer-art p {
+        color: red;
+        font-weight: 600; }
+
+footer {
+  background-color: dimgray; }
+  footer ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around; }
+    footer ul a {
+      text-decoration: none;
+      color: orange;
+      font-size: 1.5rem;
+      font-weight: 600; }
+      footer ul a:hover {
+        color: royalblue; }

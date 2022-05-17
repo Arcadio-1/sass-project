@@ -1,0 +1,72 @@
+1-$"npm install node-sass"
+2.1-$"node-sass -o style/css style/scss/main.scss" 
+2.2-$"node-sass -o style/css style/scss/main.scss -w" *for watch
+2.3- add this to "script" in "package.json" "w-sass" : "node-sass -o style/css style/scss/main.scss -w" 
+tree
+└───style
+    ├───css
+    └───scss
+	
+tips to remine
+/////////////////////////////////////////
+Variable
+
+define variable
+$"name":"amount";
+
+to use
+color :$name;
+
+/////////////////////////////////////////
+Maxin
+
+define mixen
+@Mixin "name"("$prameters") {
+  transition: $prameters;
+}
+
+*call function
+@include ul-style(1.5rem, $color-warning);
+
+////////////////////////////////////////
+Inherit
+
+Inherit styles from another class
+
+*defin (just like normal class)
+."name" : {
+colore:red;
+font-size:1rem;
+...
+}
+
+*inharit from that class
+@extend ."name";
+
+if you use a class only for that the others inharit from it you should better define and use it with "%" instade of "." this evrey thing else is same
+
+%"name" : {
+colore:red;
+font-size:1rem;
+...
+}
+
+*inharit from that class
+@extend %"name";
+
+////////////////////////////////////////
+Function
+define
+function "name"("parameters":"if you it have default value"){
+@return parameters * / - + "any"
+}
+
+use
+
+font-size :`"name"(prameters)`;
+*and sass has some useless bultin function too...
+//////////////////////////////////////
+using separate files for sass need to use "@import "name"";
+and chnch script code in "package.json" to "w-sass" : "node-sass -o style/css style/scss/ -w" *to read all files in that direction
+before the name of component files should use "_name"
+
